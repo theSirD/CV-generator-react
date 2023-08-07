@@ -1,69 +1,176 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
+  margin: 0px;
+  font-family: "Jost", sans-serif;
+}
+
+/* Generator */
+.generator {
+  height: 750px;
+  max-width: 500px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+
+  border-radius: 12px;
+  margin: 25px 30px;
+  /* display: flex; */
+  /* flex-direction: column; */
+}
+
+.generator-header {
+  color: white;
+  background-color: #0284c7;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 16px 1fr;
+  align-items: center;
+
+  background-color: black;
+  height: 40px;
+  color: white;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.nav button {
+  justify-self: center;
+  justify-self: center;
+  border: none;
+  background-color: black;
+  font-family: "Jost", sans-serif;
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.nav button:hover {
+  color: #cbd5e1;
+  transition: color 0.2s;
+}
+
+/* Generator's forms and buttons */
+.generator-forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  height: 100%;
+  margin: 20px;
+  gap: 24px;
+}
+
+.generator-forms > div {
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+}
+
+.generator-forms label {
+  font-size: 0.625rem;
+}
+
+.generator-forms input[type="submit"] {
+  cursor: pointer;
+  font-size: 0.625rem;
+  font-family: "Jost", sans-serif;
+  padding: 6px 16px;
+  background-color: #e5e5e5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  border: none;
+  border-radius: 8px;
+}
+
+.generator-forms button {
+  cursor: pointer;
+  font-size: 0.625rem;
+  font-family: "Jost", sans-serif;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 16px;
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+
+.generator-forms button:hover {
+  color: #cbd5e1;
+  transition: color 0.2s;
+}
+/* General info form */
+.form-header {
+  background-color: #0284c7;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.form-general {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+}
+
+.form-general input {
+  margin-bottom: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.form-general input[type="file"] {
+  display: none;
+}
+
+.general-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.custom-button {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 16px;
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+
+.generator-forms > .generator-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: none;
+}
+
+.generator-buttons button {
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  color: white;
+  height: 45px;
+}
+
+.generator-buttons > .clear-cv-button {
+  background-color: #dc2626;
+}
+
+.generator-buttons > .load-example-button {
+  background-color: #1e40af;
+}
+
+.generator-buttons > .download-cv-button {
+  background-color: #65a30d;
 }
