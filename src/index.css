@@ -3,6 +3,11 @@ body {
   font-family: "Jost", sans-serif;
 }
 
+#root {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Generator */
 .generator {
   height: 750px;
@@ -230,3 +235,69 @@ body {
 .job-info-container {
   grid-column: 1/-1;
 }
+
+/* CV */
+.cv-container {
+  width: 595px;
+  height: 842px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+  margin: 25px 30px;
+  flex-shrink: 0;
+}
+.cv-header {
+  background: #0284c7;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 70px;
+}
+
+.cv-name {
+  font-size: 2rem;
+}
+
+.cv-email,
+.cv-tel {
+  font-size: 1rem;
+}
+
+.cv-avatar {
+  width: 100px;
+  border-radius: 1000px;
+}
+
+.cv-body {
+  font-size: 0.625rem;
+  padding: 20px 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cv-edu-header, .cv-job-header {
+  font-size: 1rem;
+  background: rgba(186, 192, 194, 0.40);
+  color: #0284C7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cv-edu-info, .cv-job-info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 7px 15px;
+}
+
+/* .cv-job-info {
+  gap: 50px;
+  justify-content: ;
+} */
+.cv-edu-dates, .cv-job-dates {
+  width: 60px;
+}
+
