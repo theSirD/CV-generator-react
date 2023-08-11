@@ -2,6 +2,7 @@ import Navbar from "./navbar";
 import GeneralForm from "./contentScreen/GeneralForm";
 import Buttons from "./contentScreen/Buttons";
 import EducationForm from "./contentScreen/EduForm";
+import JobForm from "./contentScreen/jobForm";
 
 export default function Generator() {
   return (
@@ -14,6 +15,7 @@ export default function Generator() {
         <GeneralForm />
         <Buttons />
         <EducationForm />
+        <JobForm />
       </div>
     </div>
   );

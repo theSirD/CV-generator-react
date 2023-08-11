@@ -1,25 +1,53 @@
 export default function JobForm() {
   return (
-    <div>
-      <div className="form-header">Job info</div>
+    <div className="job-info-container">
+      <div className="job-info-header">Job info</div>
+
       <form action="" method="get" className="form-job">
-        <label htmlFor="name">Name </label>
-        <input type="text" name="name" id="name" required />
-        <label htmlFor="email">Email </label>
-        <input type="email" name="email" id="email" required />
-        <label htmlFor="email">Tel </label>
-        <input type="tel" name="email" id="email" required />
-        <div className="general-form-buttons">
-          <input
-            type="file"
-            id="avatar"
-            name="avatar"
-            accept="image/png, image/jpeg"
-          />
-          <label htmlFor="avatar" className="custom-button">
-            Add photo
-          </label>
-          <input type="submit" value="Submit" />
+        <div className="first-input-row">
+          <div className="field">
+            <label htmlFor="company">Company</label>
+            <input type="text" name="company" id="company" required />
+          </div>
+          <div className="field">
+            <label htmlFor="position-title">Position title</label>
+            <input
+              type="text"
+              name="position-title"
+              id="position-title"
+              required
+            />
+          </div>
+        </div>
+        <div className="second-input-row">
+          <div className="field">
+            <label htmlFor="start-job-date">Start Date</label>
+            <input
+              type="date"
+              name="start-job-date"
+              id="start-job-date"
+              required
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="end-job-date">End Date</label>
+            <input type="date" name="end-job-date" id="end-job-date" required />
+          </div>
+        </div>
+        <label htmlFor="responsibilites">Responsibilites</label>
+        <textarea id="responsibilites" name="responsibilites" rows="5" cols="33" required></textarea>
+
+        <div className="buttons-row">
+          <div className="job-form-buttons-left">
+            <input type="submit" value="Submit" />
+            <button type="button">Del</button>
+            <button type="button">Add</button>
+          </div>
+          <div className="job-form-buttons-right">
+            <button type="button">Hide</button>
+            <button type="button">Prev</button>
+            <button type="button">Next</button>
+          </div>
         </div>
       </form>
     </div>
