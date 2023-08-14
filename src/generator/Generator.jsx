@@ -3,6 +3,7 @@ import GeneralForm from "./contentScreen/GeneralForm";
 import Buttons from "./contentScreen/Buttons";
 import EducationForm from "./contentScreen/EduForm";
 import JobForm from "./contentScreen/jobForm";
+import Author from "./Author";
 
 export default function Generator() {
   return (
@@ -17,6 +18,7 @@ export default function Generator() {
         <EducationForm />
         <JobForm />
       </div>
+      <Author />
     </div>
   );
 }

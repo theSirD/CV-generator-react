@@ -11,14 +11,14 @@ body {
 
 /* Generator */
 .generator {
-  height: 750px;
+  height: 800px;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
 
   border-radius: 12px;
   margin: 25px 0px;
   margin-left: 30px;
-  /* display: flex; */
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
 }
 
 .generator-header {
@@ -53,16 +53,18 @@ body {
   cursor: pointer;
 }
 
-.nav button:hover {
-  color: #cbd5e1;
+
+.nav button:hover,
+input:hover,
+.custom-button:hover {
+  color: #f43f5e;
   transition: color 0.2s;
 }
-
 /* Generator's forms and buttons */
 .generator-forms {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 200px 138px 211px;
+  grid-template-rows: 200px 150px 250px;
   height: 100%;
   margin: 20px;
   gap: 24px;
@@ -203,12 +205,15 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0px 15px;
+  gap: 7px;
+  margin-top: 7px;
 }
 
 .first-input-row,
 .second-input-row {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .field {
@@ -226,15 +231,74 @@ body {
 .buttons-row {
   display: flex;
   justify-content: space-between;
+  /* gap: 40px; */
 }
 
 .buttons-row > div {
   display: flex;
+  gap: 7px;
+  height: 25px;
+}
+
+.buttons-row > div > button,
+.buttons-row > div > input {
+  width: 50px;
+  border: none;
+}
+
+.buttons-row > div > button:hover {
+  color: #f43f5e;
+  transition: color 0.2s;
 }
 
 /* Job form */
 .job-info-container {
   grid-column: 1/-1;
+}
+
+.job-info-header {
+  background-color: #0284c7;
+  color:white;
+  border-top-right-radius:12px;
+  border-top-left-radius:12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.job-info-container form {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 15px;
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.textarea-field {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Author info */
+.author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.author > img {
+  height: 30px;
+}
+
+.author > a {
+  text-decoration: none;
+  color: black;
 }
 
 /* CV */

@@ -34,8 +34,16 @@ export default function JobForm() {
             <input type="date" name="end-job-date" id="end-job-date" required />
           </div>
         </div>
-        <label htmlFor="responsibilites">Responsibilites</label>
-        <textarea id="responsibilites" name="responsibilites" rows="5" cols="33" required></textarea>
+        <div className="field textarea-field">
+          <label htmlFor="responsibilites">Responsibilites</label>
+          <textarea
+            id="responsibilites"
+            name="responsibilites"
+            rows="5"
+            cols="33"
+            required
+          ></textarea>
+        </div>
 
         <div className="buttons-row">
           <div className="job-form-buttons-left">
