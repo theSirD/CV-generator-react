@@ -26,7 +26,7 @@ export default function ResultCV({ src }) {
         </div>
         <div className="cv-job-container">
           <div className="cv-job-header">Job info</div>
-          <div className="cv-job-info">
+          <div className="cv-job-info entry-1">
             <div className="cv-job-dates">10.9.2004 - 10.9.2008</div>
             <div className="other-job-info"></div>
             <div className="cv-company">Ozon Tech</div>
