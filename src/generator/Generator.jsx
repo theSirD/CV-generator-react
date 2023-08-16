@@ -1,8 +1,5 @@
 import Navbar from "./navbar";
-import GeneralForm from "./contentScreen/GeneralForm";
-import Buttons from "./contentScreen/Buttons";
-import EducationForm from "./contentScreen/EduForm";
-import JobForm from "./contentScreen/jobForm";
+import GeneratorForms from "./generatorForms/GeneratorForms";
 import Author from "./Author";
 
 export default function Generator() {
@@ -12,12 +9,7 @@ export default function Generator() {
         <span>CV Generator</span>
       </div>
       <Navbar />
-      <div className="generator-forms">
-        <GeneralForm />
-        <Buttons />
-        <EducationForm />
-        <JobForm />
-      </div>
+      <GeneratorForms />
       <Author />
     </div>
   );
