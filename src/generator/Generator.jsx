@@ -1,5 +1,6 @@
 import Navbar from "./navbar";
 import GeneratorForms from "./generatorForms/GeneratorForms";
+import CustomizationScreen from "./customizationScreen/CustomizationScreen";
 import Author from "./Author";
 
 export default function Generator() {
@@ -9,7 +10,8 @@ export default function Generator() {
         <span>CV Generator</span>
       </div>
       <Navbar />
-      <GeneratorForms />
+      {/* <GeneratorForms /> */}
+      <CustomizationScreen />
       <Author />
     </div>
   );
