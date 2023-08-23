@@ -314,7 +314,8 @@ textarea {
 /* Customization screen */
 .customization-screen {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 100px;
+  /* grid-template-rows: 100px 100px; */
   /* height: 100%; */
   margin: 20px;
   margin-bottom: 0px;
@@ -387,12 +388,27 @@ textarea {
   border-top-left-radius: 8px;
 }
 
-
 .layout-settings-example-header {
   flex-basis: 50%;
   background-color: black;
 }
 
+
+
+/* Color settings */
+.color-settings {
+  grid-column: 2/-1;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+input[type="color"] {
+  width: 100%;
+  height: 100%;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  transform: scale(1.5);
+}
 /* CV */
 .cv-container {
   max-width: 800px;
