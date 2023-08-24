@@ -1,13 +1,40 @@
-export default function EducationForm() {
+import { useState } from "react";
+
+export default function EducationForm({ eduEntries, setEduEntries }) {
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
+  const [university, setUniversity] = useState("");
+  const [titleOfStudy, setTitleOfStudy] = useState("");
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    const eduEntry = {
+      start,
+      end,
+      university,
+      titleOfStudy,
+    };
+
+    setEduEntries([...eduEntries, eduEntry]);
+  };
+
   return (
     <div className="edu-info-container">
       <div className="edu-info-header">Education info</div>
 
-      <form action="" method="get" className="form-edu">
+      <form className="form-edu" onSubmit={onSubmit}>
         <div className="first-input-row">
           <div className="field">
             <label htmlFor="university">University</label>
-            <input type="text" name="university" id="university" required />
+            <input
+              type="text"
+              name="university"
+              id="university"
+              value={university}
+              onChange={(e) => setUniversity(e.target.value)}
+              required
+            />
           </div>
           <div className="field">
             <label htmlFor="title-of-study">Title of study </label>
@@ -15,6 +42,8 @@ export default function EducationForm() {
               type="text"
               name="title-of-study"
               id="title-of-study"
+              value={titleOfStudy}
+              onChange={(e) => setTitleOfStudy(e.target.value)}
               required
             />
           </div>
@@ -26,6 +55,8 @@ export default function EducationForm() {
               type="date"
               name="start-study-date"
               id="start-study-date"
+              value={start}
+              onChange={(e) => setStart(e.target.value)}
               required
             />
           </div>
@@ -35,6 +66,8 @@ export default function EducationForm() {
               type="date"
               name="end-study-date"
               id="end-study-date"
+              value={end}
+              onChange={(e) => setEnd(e.target.value)}
               required
             />
           </div>

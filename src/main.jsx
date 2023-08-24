@@ -1,12 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Generator from "./generator/Generator.jsx";
-import ResultCV from "./resultCV/ResultCV";
+import Root from "./roots/Root";
+
+
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     children: [
+//       <Generator />,
+//       <ResultCV />,
+//     ],
+//   },
+// ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Generator />
-    <ResultCV />
+    <Root />
   </React.StrictMode>
 );

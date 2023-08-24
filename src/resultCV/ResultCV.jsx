@@ -1,4 +1,7 @@
-export default function ResultCV({ src }) {
+import CVJobEntry from "./CVJobEntry";
+import CVEduContainer from "./CVEduContainer/CVEduContainer";
+
+export default function ResultCV({ src, eduEntries }) {
   return (
     <div className="cv-container">
       <div className="cv-header">
@@ -10,29 +13,24 @@ export default function ResultCV({ src }) {
         <img src="src/assets/me.jpeg" alt="avatar" className="cv-avatar" />
       </div>
       <div className="cv-body">
-        {/* replace following with components */}
-        <div className="cv-edu-container">
-          <div className="cv-edu-header">Education info</div>
-          <div className="cv-edu-info entry-1">
-            <div className="cv-edu-dates">10.9.2004 - 10.9.2008</div>
-            <div className="cv-university">ITMO University</div>
-            <div className="cv-title-of-study">Bachelors in IT</div>
-          </div>
-          <div className="cv-edu-info entry-2">
-            <div className="cv-edu-dates">10.9.2004 - 10.9.2008</div>
-            <div className="cv-university">ITMO University</div>
-            <div className="cv-title-of-study">Bachelors in IT</div>
-          </div>
-        </div>
+        <CVEduContainer eduEntries={eduEntries} />
+
         <div className="cv-job-container">
           <div className="cv-job-header">Job info</div>
-          <div className="cv-job-info entry-1">
-            <div className="cv-job-dates">10.9.2004 - 10.9.2008</div>
-            <div className="other-job-info"></div>
-            <div className="cv-company">Ozon Tech</div>
-            <div className="cv-position-title">Intern</div>
-            <div className="cv-responsibilites">Interny responsibilities</div>
-          </div>
+          <CVJobEntry
+            start={"10.9.2004"}
+            end={"10.9.2008"}
+            company={"Ozon Tech"}
+            positionTitle={"Intern"}
+            responsibilites={"Interny responsibilities"}
+          />
+          <CVJobEntry
+            start={"10.9.2004"}
+            end={"10.9.2008"}
+            company={"Ozon Tech"}
+            positionTitle={"Intern"}
+            responsibilites={"Interny responsibilities"}
+          />
         </div>
       </div>
     </div>
