@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function EducationForm({ eduEntries, setEduEntries }) {
   const [start, setStart] = useState("");
@@ -10,6 +11,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
     e.preventDefault();
 
     const eduEntry = {
+      id: uuidv4(),
       start,
       end,
       university,
