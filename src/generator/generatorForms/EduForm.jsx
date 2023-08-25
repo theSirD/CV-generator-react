@@ -7,36 +7,61 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
   const [end, setEnd] = useState("");
   const [university, setUniversity] = useState("");
   const [titleOfStudy, setTitleOfStudy] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const [index, setIndex] = useState(0);
   const hasNext = index < eduEntries.length - 1;
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    let eduEntry = {
-      // id: uuidv4(),
-      start,
-      end,
-      university,
-      titleOfStudy,
-      isSubmitted,
-    };
+    if (!eduEntries[index].isSubmitted) {
+      let eduEntry = {
+        // id: uuidv4(),
+        start,
+        end,
+        university,
+        titleOfStudy,
+        isSubmitted: true,
+      };
 
-    const newEduEntries = [];
-    for (let i = 0; i < eduEntries.length - 1; i++) {
-      newEduEntries.push(eduEntries[i]);
+      const newEduEntries = [];
+      for (let i = 0; i < eduEntries.length - 1; i++) {
+        newEduEntries.push(eduEntries[i]);
+      }
+      newEduEntries.push(eduEntry);
+      newEduEntries.push({
+        start: "",
+        end: "",
+        university: "",
+        titleOfStudy: "",
+        isSubmitted: false,
+      });
+
+      setEduEntries(newEduEntries);
+    } else {
+      let changedEduEntry = eduEntries[index];
+      changedEduEntry.start = start;
+      changedEduEntry.end = end;
+      changedEduEntry.university = university;
+      changedEduEntry.titleOfStudy = titleOfStudy;
+
+      const newEduEntries = [];
+      for (let i = 0; i < index; i++) {
+        newEduEntries.push(eduEntries[i]);
+      }
+      newEduEntries.push(changedEduEntry);
+      for (let i = index + 1; i < eduEntries.length - 1; i++) {
+        newEduEntries.push(eduEntries[i]);
+      }
+      newEduEntries.push({
+        start: "",
+        end: "",
+        university: "",
+        titleOfStudy: "",
+        isSubmitted: false,
+      });
+
+      setEduEntries(newEduEntries);
     }
-    newEduEntries.push(eduEntry);
-    newEduEntries.push({
-      start: "",
-      end: "",
-      university: "",
-      titleOfStudy: "",
-      isSubmitted: false,
-    });
-
-    setEduEntries(newEduEntries);
   };
 
   const handleNextClick = () => {
@@ -121,7 +146,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
         </div>
         <div className="buttons-row">
           <div className="study-form-buttons-left">
-            <input type="submit" value="Submit" />
+            <input type="submit" value={eduEntries[index].isSubmitted ? "Edit" : "Submit"} />
             <button type="button">Del</button>
             <button type="button">Add</button>
           </div>
