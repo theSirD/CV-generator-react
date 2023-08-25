@@ -1,6 +1,6 @@
 import CVEduEntry from "./CVEduEntry";
 export default function CVEduContainer({ eduEntries }) {
-  if (eduEntries.length === 0) return;
+  if (eduEntries.length === 1) return;
 
   return (
     <div className="cv-edu-container">
