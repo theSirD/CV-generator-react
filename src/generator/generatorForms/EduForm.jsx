@@ -157,6 +157,26 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
     }
   };
 
+  const handleDelClick = () => {
+    const newEduEntries = [];
+    for (let i = 0; i < index; i++) {
+      newEduEntries.push(eduEntries[i]);
+    }
+    for (let i = index + 1; i < eduEntries.length - 1; i++) {
+      newEduEntries.push(eduEntries[i]);
+    }
+    newEduEntries.push({
+      start: "",
+      end: "",
+      university: "",
+      titleOfStudy: "",
+      isSubmitted: false,
+      hide: false,
+    });
+
+    setEduEntries(newEduEntries);
+  };
+
   return (
     <div className="edu-info-container">
       <div className="edu-info-header">Education info</div>
@@ -231,7 +251,9 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
             />
             {eduEntries[index].isSubmitted && (
               <>
-                <button type="button">Del</button>
+                <button type="button" onClick={handleDelClick}>
+                  Del
+                </button>
                 <button type="button" onClick={handleAddClick}>
                   Add
                 </button>
