@@ -4,7 +4,7 @@ import ResultCV from "../resultCV/ResultCV";
 
 export default function Root() {
   const [eduEntries, setEduEntries] = useState([
-    { start: "", end: "", university: "", titleOfStudy: "", isSubmitted: false},
+    { start: "", end: "", university: "", titleOfStudy: "", isSubmitted: false, hide: false},
   ]);
   return (
     <>

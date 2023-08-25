@@ -9,6 +9,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
   const [titleOfStudy, setTitleOfStudy] = useState("");
   const [index, setIndex] = useState(0);
   const hasNext = index < eduEntries.length - 1;
+  const hasPrev = index > 0;
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
         university,
         titleOfStudy,
         isSubmitted: true,
+        hide: false,
       };
 
       const newEduEntries = [];
@@ -34,6 +36,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
         university: "",
         titleOfStudy: "",
         isSubmitted: false,
+        hide: false,
       });
 
       setEduEntries(newEduEntries);
@@ -58,6 +61,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
         university: "",
         titleOfStudy: "",
         isSubmitted: false,
+        hide: false,
       });
 
       setEduEntries(newEduEntries);
@@ -76,6 +80,44 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
     setEnd(eduEntries[newIndex].end);
     setUniversity(eduEntries[newIndex].university);
     setTitleOfStudy(eduEntries[newIndex].titleOfStudy);
+  };
+
+  const handlePrevClick = () => {
+    let newIndex = index;
+    if (hasPrev) {
+      newIndex--;
+    } else {
+      newIndex = eduEntries.length - 1;
+    }
+    setIndex(newIndex);
+    setStart(eduEntries[newIndex].start);
+    setEnd(eduEntries[newIndex].end);
+    setUniversity(eduEntries[newIndex].university);
+    setTitleOfStudy(eduEntries[newIndex].titleOfStudy);
+  };
+
+  const handleHideClick = () => {
+    let changedEduEntry = eduEntries[index];
+    changedEduEntry.hide = !changedEduEntry.hide;
+
+    const newEduEntries = [];
+    for (let i = 0; i < index; i++) {
+      newEduEntries.push(eduEntries[i]);
+    }
+    newEduEntries.push(changedEduEntry);
+    for (let i = index + 1; i < eduEntries.length - 1; i++) {
+      newEduEntries.push(eduEntries[i]);
+    }
+    newEduEntries.push({
+      start: "",
+      end: "",
+      university: "",
+      titleOfStudy: "",
+      isSubmitted: false,
+      hide: false,
+    });
+
+    setEduEntries(newEduEntries);
   };
 
   return (
@@ -146,13 +188,22 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
         </div>
         <div className="buttons-row">
           <div className="study-form-buttons-left">
-            <input type="submit" value={eduEntries[index].isSubmitted ? "Edit" : "Submit"} />
+            <input
+              type="submit"
+              value={eduEntries[index].isSubmitted ? "Edit" : "Submit"}
+            />
             <button type="button">Del</button>
             <button type="button">Add</button>
           </div>
           <div className="study-form-buttons-right">
-            <button type="button">Hide</button>
-            <button type="button">Prev</button>
+            {eduEntries[index].isSubmitted && (
+              <button type="button" onClick={handleHideClick}>
+                {eduEntries[index].hide ? "Show" : "Hide"}
+              </button>
+            )}
+            <button type="button" onClick={handlePrevClick}>
+              Prev
+            </button>
             <button type="button" onClick={handleNextClick}>
               Next
             </button>
