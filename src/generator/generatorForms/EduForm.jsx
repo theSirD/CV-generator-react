@@ -120,6 +120,43 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
     setEduEntries(newEduEntries);
   };
 
+  const handleAddClick = () => {
+    if (index === eduEntries.length - 2) {
+      handleNextClick();
+    } else {
+      const newIndex = index + 1;
+
+      const newEntry = {
+        start: "",
+        end: "",
+        university: "",
+        titleOfStudy: "",
+        isSubmitted: false,
+        hide: false,
+      };
+
+      const newEduEntries = [];
+      for (let i = 0; i < newIndex; i++) {
+        newEduEntries.push(eduEntries[i]);
+      }
+      newEduEntries.push(newEntry);
+      for (let i = newIndex; i < eduEntries.length - 1; i++) {
+        newEduEntries.push(eduEntries[i]);
+      }
+      newEduEntries.push({
+        start: "",
+        end: "",
+        university: "",
+        titleOfStudy: "",
+        isSubmitted: false,
+        hide: false,
+      });
+
+      setIndex(newIndex);
+      setEduEntries(newEduEntries);
+    }
+  };
+
   return (
     <div className="edu-info-container">
       <div className="edu-info-header">Education info</div>
@@ -192,8 +229,14 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
               type="submit"
               value={eduEntries[index].isSubmitted ? "Edit" : "Submit"}
             />
-            <button type="button">Del</button>
-            <button type="button">Add</button>
+            {eduEntries[index].isSubmitted && (
+              <>
+                <button type="button">Del</button>
+                <button type="button" onClick={handleAddClick}>
+                  Add
+                </button>
+              </>
+            )}
           </div>
           <div className="study-form-buttons-right">
             {eduEntries[index].isSubmitted && (
@@ -201,6 +244,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
                 {eduEntries[index].hide ? "Show" : "Hide"}
               </button>
             )}
+
             <button type="button" onClick={handlePrevClick}>
               Prev
             </button>
