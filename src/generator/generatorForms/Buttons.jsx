@@ -31,13 +31,13 @@ export default function Buttons({
     setStart("2022-09-01");
     setEnd("2026-09-01");
     setUniversity("ITMO");
-    setTitleOfStudy("Computer Science");
+    setTitleOfStudy("Computer Science: Data Structures, C/C++");
     setEduEntries([
       {
         start: "2022-09-1",
         end: "2026-09-1",
         university: "ITMO University",
-        titleOfStudy: "Computer Science",
+        titleOfStudy: "Computer Science: Data Structures, C/C++",
         isSubmitted: true,
         hide: false,
       },
@@ -60,12 +60,12 @@ export default function Buttons({
       >
         Load example
       </button>
-      <button type="button" className="clear-cv-button">
+      {/* <button type="button" className="clear-cv-button">
         Clear resume
       </button>
       <button type="button" className="download-cv-button">
         Download CV
-      </button>
+      </button> */}
     </div>
   );
 }

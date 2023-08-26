@@ -18,7 +18,7 @@ export default function Generator({
       <div className="generator-header">
         <span>CV Generator</span>
       </div>
-      <Navbar />
+      {/* <Navbar /> */}
       <GeneratorForms
         eduEntries={eduEntries}
         setEduEntries={setEduEntries}
