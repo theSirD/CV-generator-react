@@ -17,10 +17,6 @@ export default function Buttons({
   index,
   setIndex,
 }) {
-  // const handleClearClick()
-
-  //и вот это синхронизируй
-
   const handleLoadButtonClick = () => {
     setName("Daniel Isaev");
     setEmail("isaev-daniel17@yandex.ru");
@@ -30,6 +26,7 @@ export default function Buttons({
       email: "isaev-daniel17@yandex.ru",
       tel: "8921777****",
     });
+    setImagePath("src/assets/me.jpeg");
 
     setStart("2022-09-01");
     setEnd("2026-09-01");
