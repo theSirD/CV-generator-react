@@ -1,7 +1,7 @@
-import CVJobEntry from "./CVJobEntry";
 import CVEduContainer from "./CVEduContainer/CVEduContainer";
+import CVJobContainer from "./CVJobContainer/CVJobContainer";
 
-export default function ResultCV({ src, eduEntries }) {
+export default function ResultCV({ src, eduEntries, jobEntries }) {
   return (
     <div className="cv-container">
       <div className="cv-header">
@@ -14,24 +14,7 @@ export default function ResultCV({ src, eduEntries }) {
       </div>
       <div className="cv-body">
         <CVEduContainer eduEntries={eduEntries} />
-
-        <div className="cv-job-container">
-          <div className="cv-job-header">Job info</div>
-          <CVJobEntry
-            start={"10.9.2004"}
-            end={"10.9.2008"}
-            company={"Ozon Tech"}
-            positionTitle={"Intern"}
-            responsibilites={"Interny responsibilities"}
-          />
-          <CVJobEntry
-            start={"10.9.2004"}
-            end={"10.9.2008"}
-            company={"Ozon Tech"}
-            positionTitle={"Intern"}
-            responsibilites={"Interny responsibilities"}
-          />
-        </div>
+        <CVJobContainer jobEntries={jobEntries} />
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { forceUpdate } from "react";
 
 export default function EducationForm({ eduEntries, setEduEntries }) {
   const [start, setStart] = useState("");
@@ -266,13 +265,16 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
                 {eduEntries[index].hide ? "Show" : "Hide"}
               </button>
             )}
-
-            <button type="button" onClick={handlePrevClick}>
-              Prev
-            </button>
-            <button type="button" onClick={handleNextClick}>
-              Next
-            </button>
+            {eduEntries.length > 1 && (
+              <>
+                <button type="button" onClick={handlePrevClick}>
+                  Prev
+                </button>
+                <button type="button" onClick={handleNextClick}>
+                  Next
+                </button>
+              </>
+            )}
           </div>
         </div>
       </form>
