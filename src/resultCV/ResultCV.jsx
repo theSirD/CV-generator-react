@@ -1,14 +1,14 @@
 import CVEduContainer from "./CVEduContainer/CVEduContainer";
 import CVJobContainer from "./CVJobContainer/CVJobContainer";
 
-export default function ResultCV({ src, eduEntries, jobEntries }) {
+export default function ResultCV({ src, eduEntries, jobEntries, generalInfo }) {
   return (
     <div className="cv-container">
       <div className="cv-header">
         <div className="cv-general-info">
-          <div className="cv-name">Daniel Isaev</div>
-          <div className="cv-email">isaev-daneil17@yandex.ru</div>
-          <div className="cv-tel">12345556789</div>
+          <div className="cv-name">{generalInfo.name}</div>
+          <div className="cv-email">{generalInfo.email}</div>
+          <div className="cv-tel">{generalInfo.tel}</div>
         </div>
         <img src="src/assets/me.jpeg" alt="avatar" className="cv-avatar" />
       </div>

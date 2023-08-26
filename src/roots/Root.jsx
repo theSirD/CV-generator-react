@@ -3,6 +3,15 @@ import Generator from "../generator/Generator";
 import ResultCV from "../resultCV/ResultCV";
 
 export default function Root() {
+  const [generalInfo, setGeneralInfo] = useState([
+    {
+      name: "",
+      email: "",
+      tel: "",
+      isSubmitted: false,
+    },
+  ]);
+
   const [eduEntries, setEduEntries] = useState([
     {
       start: "",
@@ -33,8 +42,14 @@ export default function Root() {
         setEduEntries={setEduEntries}
         jobEntries={jobEntries}
         setJobEntries={setJobEntries}
+        generalInfo={generalInfo}
+        setGeneralInfo={setGeneralInfo}
       />
-      <ResultCV eduEntries={eduEntries} jobEntries={jobEntries} />
+      <ResultCV
+        eduEntries={eduEntries}
+        jobEntries={jobEntries}
+        generalInfo={generalInfo}
+      />
     </>
   );
 }

@@ -8,6 +8,8 @@ export default function Generator({
   setEduEntries,
   jobEntries,
   setJobEntries,
+  generalInfo,
+  setGeneralInfo
 }) {
   return (
     <div className="generator">
@@ -20,6 +22,8 @@ export default function Generator({
         setEduEntries={setEduEntries}
         jobEntries={jobEntries}
         setJobEntries={setJobEntries}
+        generalInfo={generalInfo}
+        setGeneralInfo={setGeneralInfo}
       />
       {/* <CustomizationScreen /> */}
       <Author />
