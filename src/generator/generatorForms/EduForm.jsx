@@ -1,12 +1,20 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export default function EducationForm({ eduEntries, setEduEntries }) {
-  const [start, setStart] = useState("");
-  const [end, setEnd] = useState("");
-  const [university, setUniversity] = useState("");
-  const [titleOfStudy, setTitleOfStudy] = useState("");
-  const [index, setIndex] = useState(0);
+export default function EducationForm({
+  eduEntries,
+  setEduEntries,
+  start,
+  setStart,
+  end,
+  setEnd,
+  university,
+  setUniversity,
+  titleOfStudy,
+  setTitleOfStudy,
+  index,
+  setIndex,
+}) {
   const hasNext = index < eduEntries.length - 1;
   const hasPrev = index > 0;
 

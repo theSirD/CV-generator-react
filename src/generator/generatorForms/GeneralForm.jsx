@@ -4,11 +4,13 @@ export default function GeneralForm({
   generalInfo,
   setGeneralInfo,
   setImagePath,
+  name,
+  setName,
+  email,
+  setEmail,
+  tel,
+  setTel,
 }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
-
   const onSubmit = (e) => {
     e.preventDefault();
     setGeneralInfo({ name, email, tel, isSubmitted: true });
