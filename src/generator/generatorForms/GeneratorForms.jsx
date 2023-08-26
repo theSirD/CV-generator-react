@@ -10,10 +10,17 @@ export default function GeneratorForms({
   setJobEntries,
   generalInfo,
   setGeneralInfo,
+  imagePath,
+  setImagePath,
 }) {
   return (
     <div className="generator-forms">
-      <GeneralForm generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
+      <GeneralForm
+        generalInfo={generalInfo}
+        setGeneralInfo={setGeneralInfo}
+        imagePath={imagePath}
+        setImagePath={setImagePath}
+      />
       <Buttons />
       <EducationForm eduEntries={eduEntries} setEduEntries={setEduEntries} />
       <JobForm jobEntries={jobEntries} setJobEntries={setJobEntries} />

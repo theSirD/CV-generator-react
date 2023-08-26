@@ -12,6 +12,8 @@ export default function Root() {
     },
   ]);
 
+  const [imagePath, setImagePath] = useState("");
+
   const [eduEntries, setEduEntries] = useState([
     {
       start: "",
@@ -44,11 +46,14 @@ export default function Root() {
         setJobEntries={setJobEntries}
         generalInfo={generalInfo}
         setGeneralInfo={setGeneralInfo}
+        imagePath={imagePath}
+        setImagePath={setImagePath}
       />
       <ResultCV
         eduEntries={eduEntries}
         jobEntries={jobEntries}
         generalInfo={generalInfo}
+        imagePath={imagePath}
       />
     </>
   );

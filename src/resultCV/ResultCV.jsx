@@ -1,7 +1,13 @@
 import CVEduContainer from "./CVEduContainer/CVEduContainer";
 import CVJobContainer from "./CVJobContainer/CVJobContainer";
 
-export default function ResultCV({ src, eduEntries, jobEntries, generalInfo }) {
+export default function ResultCV({
+  src,
+  eduEntries,
+  jobEntries,
+  generalInfo,
+  imagePath,
+}) {
   return (
     <div className="cv-container">
       <div className="cv-header">
@@ -10,7 +16,9 @@ export default function ResultCV({ src, eduEntries, jobEntries, generalInfo }) {
           <div className="cv-email">{generalInfo.email}</div>
           <div className="cv-tel">{generalInfo.tel}</div>
         </div>
-        <img src="src/assets/me.jpeg" alt="avatar" className="cv-avatar" />
+        {imagePath !== "" && (
+          <img src={imagePath} alt="avatar" className="cv-avatar" />
+        )}
       </div>
       <div className="cv-body">
         <CVEduContainer eduEntries={eduEntries} />

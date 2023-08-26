@@ -9,7 +9,9 @@ export default function Generator({
   jobEntries,
   setJobEntries,
   generalInfo,
-  setGeneralInfo
+  setGeneralInfo,
+  imagePath,
+  setImagePath,
 }) {
   return (
     <div className="generator">
@@ -24,6 +26,8 @@ export default function Generator({
         setJobEntries={setJobEntries}
         generalInfo={generalInfo}
         setGeneralInfo={setGeneralInfo}
+        imagePath={imagePath}
+        setImagePath={setImagePath}
       />
       {/* <CustomizationScreen /> */}
       <Author />

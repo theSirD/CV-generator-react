@@ -1,6 +1,10 @@
 import { useState } from "react";
 
-export default function GeneralForm({ generalInfo, setGeneralInfo }) {
+export default function GeneralForm({
+  generalInfo,
+  setGeneralInfo,
+  setImagePath,
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
@@ -10,10 +14,23 @@ export default function GeneralForm({ generalInfo, setGeneralInfo }) {
     setGeneralInfo({ name, email, tel, isSubmitted: true });
   };
 
+  const handleFileUpload = (e) => {
+    e.preventDefault();
+    const { files } = e.target;
+    const image = files[0];
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImagePath(reader.result);
+    };
+
+    reader.readAsDataURL(image);
+  };
+
   return (
     <div className="general-info-container">
       <div className="general-info-header">General info</div>
-      <form action="" method="" className="form-general" onSubmit={onSubmit}>
+      <form className="form-general" onSubmit={onSubmit}>
         <div className="field">
           <label htmlFor="name">Name </label>
           <input
@@ -54,12 +71,16 @@ export default function GeneralForm({ generalInfo, setGeneralInfo }) {
           />
         </div>
         <div className="buttons-row">
-          <input type="submit" value={!generalInfo.isSubmitted ? "Submit" : "Edit"} />
+          <input
+            type="submit"
+            value={!generalInfo.isSubmitted ? "Submit" : "Edit"}
+          />
           <input
             type="file"
             id="avatar"
             name="avatar"
             accept="image/png, image/jpeg"
+            onChange={handleFileUpload}
           />
           <label htmlFor="avatar" className="custom-button">
             Add photo
