@@ -185,7 +185,6 @@ export default function JobForm({ jobEntries, setJobEntries }) {
 
     setJobEntries(newJobEntries);
   };
-
   return (
     <div className="job-info-container">
       <div className="job-info-header">Job info</div>
@@ -199,6 +198,7 @@ export default function JobForm({ jobEntries, setJobEntries }) {
               type="text"
               name="company"
               id="company"
+              value={company}
               onChange={(e) => {
                 setCompany(e.target.value);
                 jobEntries[index].company = e.target.value;
@@ -212,6 +212,7 @@ export default function JobForm({ jobEntries, setJobEntries }) {
               type="text"
               name="position-title"
               id="position-title"
+              value={positionTitle}
               onChange={(e) => {
                 setPositionTitle(e.target.value);
                 jobEntries[index].positionTitle = e.target.value;
@@ -227,6 +228,7 @@ export default function JobForm({ jobEntries, setJobEntries }) {
               type="date"
               name="start-job-date"
               id="start-job-date"
+              value={start}
               onChange={(e) => {
                 setStart(e.target.value);
                 jobEntries[index].start = e.target.value;
@@ -240,6 +242,7 @@ export default function JobForm({ jobEntries, setJobEntries }) {
               type="date"
               name="end-job-date"
               id="end-job-date"
+              value={end}
               onChange={(e) => {
                 setEnd(e.target.value);
                 jobEntries[index].end = e.target.value;
@@ -255,6 +258,7 @@ export default function JobForm({ jobEntries, setJobEntries }) {
             name="responsibilites"
             rows="5"
             cols="33"
+            value={responsibilites}
             onChange={(e) => {
               setResponsibilites(e.target.value);
               jobEntries[index].responsibilites = e.target.value;

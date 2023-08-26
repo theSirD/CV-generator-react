@@ -236,7 +236,7 @@ export default function EducationForm({ eduEntries, setEduEntries }) {
               value={end}
               onChange={(e) => {
                 setEnd(e.target.value);
-                eduEntries[index].university = e.target.value;
+                eduEntries[index].end = e.target.value;
               }}
               required
             />
