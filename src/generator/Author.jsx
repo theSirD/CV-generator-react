@@ -1,6 +1,10 @@
 export default function Author() {
-    return <div className="author">
+  return (
+    <div className="author">
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
         <img src="public/github.jpg" alt="GitHub picture" />
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">theSirD</a>
+        <span>theSirD</span>
+      </a>
     </div>
+  );
 }
