@@ -83,6 +83,7 @@ export default function JobForm({ jobEntries, setJobEntries }) {
     setEnd(jobEntries[newIndex].end);
     setCompany(jobEntries[newIndex].company);
     setPositionTitle(jobEntries[newIndex].positionTitle);
+    setResponsibilites(jobEntries[newIndex].responsibilites);
   };
 
   const handlePrevClick = () => {
@@ -97,6 +98,7 @@ export default function JobForm({ jobEntries, setJobEntries }) {
     setEnd(jobEntries[newIndex].end);
     setCompany(jobEntries[newIndex].company);
     setPositionTitle(jobEntries[newIndex].positionTitle);
+    setResponsibilites(jobEntries[newIndex].responsibilites);
   };
 
   const handleHideClick = () => {
@@ -267,13 +269,33 @@ export default function JobForm({ jobEntries, setJobEntries }) {
               type="submit"
               value={jobEntries[index].isSubmitted ? "Edit" : "Submit"}
             />
-            <button type="button">Del</button>
-            <button type="button">Add</button>
+            {jobEntries[index].isSubmitted && (
+              <>
+                <button type="button" onClick={handleDelClick}>
+                  Del
+                </button>
+                <button type="button" onClick={handleAddClick}>
+                  Add
+                </button>
+              </>
+            )}
           </div>
           <div className="job-form-buttons-right">
-            <button type="button">Hide</button>
-            <button type="button">Prev</button>
-            <button type="button">Next</button>
+            {jobEntries[index].isSubmitted && (
+              <button type="button" onClick={handleHideClick}>
+                {jobEntries[index].hide ? "Show" : "Hide"}
+              </button>
+            )}
+            {jobEntries.length > 1 && (
+              <>
+                <button type="button" onClick={handlePrevClick}>
+                  Prev
+                </button>
+                <button type="button" onClick={handleNextClick}>
+                  Next
+                </button>
+              </>
+            )}
           </div>
         </div>
       </form>
