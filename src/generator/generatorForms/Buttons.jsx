@@ -1,3 +1,5 @@
+import exampleAvatarUrl from "../../../src/assets/me.jpeg";
+
 export default function Buttons({
   setName,
   setEmail,
@@ -26,7 +28,7 @@ export default function Buttons({
       email: "isaev-daniel17@yandex.ru",
       tel: "8921777****",
     });
-    setImagePath("src/assets/me.jpeg");
+    setImagePath(exampleAvatarUrl);
 
     setStart("2022-09-01");
     setEnd("2026-09-01");

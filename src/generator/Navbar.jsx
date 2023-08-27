@@ -7,8 +7,8 @@ export default function Navbar() {
       {/* <NavLink to="/content">Content</NavLink> */}
 
       <button type="button">Content</button>
-      <RxDividerVertical />
-      <button type="button">Customization</button>
+      {/* <RxDividerVertical /> */}
+      {/* <button type="button">Customization</button> */}
       {/* <NavLink to="/customization">Customization</NavLink> */}
     </div>
   );
